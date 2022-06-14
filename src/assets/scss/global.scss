@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+// * {
+//   outline: 1px solid red;
+// }
+$color_Main: #283e5a;
+$color_Blue: #4f85a5;
+$color_DarkBlue: #3a657e;
+$color_LightBlue: #7092a7;
+$color_White: #fff;
+
+
+/* header */
+$color_header_bg: #fff;
+$color_header_logo: $color_Blue;
+$color_header_menu: $color_Blue;
+$color_header_menu_bg: #fff;
+$color_header_hamburger: $color_Blue;
+$color_header_active_bg: #2d496b;
+$color_header_active_logo: #eee;
+$color_header_active_menu: #eee;
+$color_header_active_menu_bg: #2d496b;
+$color_header_active_hamburger: #eee;
+/* home */
+$color_home_name: #1e324e;
+$color_home_subtitle: $color_Main;
+/* about */
+$color_about_bg: #F8DBBD;
+$color_about_page_title: $color_Main;
+$color_about_block_title: $color_Main;
+$color_about_intro: $color_Main;
+$color_about_timestamp: $color_Main;
+$color_about_timenode: $color_Main;
+$color_about_content:$color_Main;
+
+/* works 共用顏色 */
+$color_all_card_bg: $color_White; // card背景色(看不見，可不調)
+$color_all_card_content_bg: rgba(255, 255, 255, 0.686); // card下方說明背景色
+/* works-layout */
+$color_layout_bg: #fff;
+$color_layout_page_title: #3a5272;
+$color_layout_card_title: #fff; // card標題
+$color_layout_card_title_bg: #3a657e; // card標題背景色
+$color_layout_card_left_bg: #7092a7; // card左邊背景色
+$color_layout_card_left_icons: #fff; // card左邊icons
+$color_layout_card_left_tags: #eee; // card左邊tags
+$color_layout_card_left_small: #eee; // card左邊說明
+/* works-vue */
+$color_vue_bg: #F8DBBD;
+$color_vue_page_title: #3a5272;
+$color_vue_card_title: $color_White; // card標題
+$color_vue_card_title_bg: $color_DarkBlue; // card標題背景色
+$color_vue_card_left_bg: $color_LightBlue; // card左邊背景色
+$color_vue_card_left_icons: $color_White; // card左邊icons
+$color_vue_card_left_tags: #eee; // card左邊tags
+$color_vue_card_left_small: #eee; // card左邊說明
+/* works-react */
+$color_react_bg: #fff;
+$color_react_page_title: #3a5272;
+$color_react_card_title: #fff; // card標題
+$color_react_card_title_bg: #3a657e; // card標題背景色
+$color_react_card_left_bg: #7092a7; // card左邊背景色
+$color_react_card_left_icons: #fff; // card左邊icons
+$color_react_card_left_tags: #eee; // card左邊tags
+$color_react_card_left_small: #eee; // card左邊說明
+
+
+
+$navHeight: 55px;
+$menuWidth: 250px;
+
+$breakpoint_XXS: 340px;
+$breakpoint_XS: 480px;
+$breakpoint_S: 576px;
+$breakpoint_M: 768px;
+$breakpoint_L: 992px;
+$breakpoint_XL: 1200px;
+
+$height_XXS: 500px;
+$height_XS: 650px;
+$height_S: 700px;
+$height_M: 800px;
+$height_L: 850px;
+$height_XL: 900px;
+
+$breakpoints: (
+  xsmall: $breakpoint_XS,
+  small: $breakpoint_S,
+  medium: $breakpoint_M,
+  large: $breakpoint_L,
+  xlarge: $breakpoint_XL,
+);
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    } @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+@mixin nav-font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+      line-height: $fs-font-size;
+      padding: $fs-font-size/1.5 $fs-font-size;
+    } @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+        line-height: $fs-font-size;
+        padding: $fs-font-size/1.5 $fs-font-size;
+      }
+    }
+  }
+}
+$nav-menu-font-sizes: (
+  null: 20px,
+  $breakpoint_XS: 20px,
+  $breakpoint_S: 22px,
+  $breakpoint_M: 24px,
+  $breakpoint_L: 26px,
+  $breakpoint_XL: 28px,
+);
+$nav-submenu-font-sizes: (
+  null: 18px,
+  $breakpoint_XS: 18px,
+  $breakpoint_S: 20px,
+  $breakpoint_M: 23px,
+  $breakpoint_L: 24px,
+  $breakpoint_XL: 26px,
+);
+$header-logo-font-sizes: (
+  null: 28px,
+  $breakpoint_XS: 28px,
+  $breakpoint_S: 28px,
+  $breakpoint_M: 30px,
+  $breakpoint_L: 32px,
+  $breakpoint_XL: 32px,
+);
+$home-name-font-sizes: (
+  null: 40px,
+  $breakpoint_XXS: 52px,
+  $breakpoint_XS: 60px,
+  $breakpoint_S: 72px,
+  $breakpoint_M: 74px,
+  $breakpoint_L: 74px,
+  $breakpoint_XL: 76px,
+);
+$home-subtitle-font-sizes: (
+  null: 24px,
+  $breakpoint_XS: 28px,
+  $breakpoint_S: 28px,
+  $breakpoint_M: 30px,
+  $breakpoint_L: 30px,
+  $breakpoint_XL: 32px,
+);
+$about-block-title-font-sizes: (
+  null: 26px,
+  $breakpoint_XS: 26px,
+  $breakpoint_S: 28px,
+  $breakpoint_M: 30px,
+  $breakpoint_L: 32px,
+  $breakpoint_XL: 36px,
+);
+$page-title-font-sizes: (
+  null: 38px,
+  $breakpoint_XS: 40px,
+  $breakpoint_S: 44px,
+  $breakpoint_M: 48px,
+  $breakpoint_L: 48px,
+  $breakpoint_XL: 50px,
+);
+$card-title-font-sizes: (
+  null: 20px,
+  $breakpoint_XS: 20px,
+  $breakpoint_S: 22px,
+  $breakpoint_M: 22px,
+  $breakpoint_L: 24px,
+  $breakpoint_XL: 24px,
+);
+$card-content-font-sizes: (
+  null: 11px,
+  $breakpoint_XS: 11px,
+  $breakpoint_S: 12px,
+  $breakpoint_M: 13px,
+  $breakpoint_L: 15px,
+  $breakpoint_XL: 16px,
+);
+$card-tags-font-sizes: (
+  null: 12px,
+  $breakpoint_XS: 12px,
+  $breakpoint_S: 13px,
+  $breakpoint_M: 13px,
+  $breakpoint_L: 14px,
+  $breakpoint_XL: 14px,
+);
+.header{
+  .logo {
+    @include font-size($header-logo-font-sizes);
+  }
+  nav {
+    .sidemenu__item a {
+      @include nav-font-size($nav-menu-font-sizes);
+      &.sub-item {
+        @include nav-font-size($nav-submenu-font-sizes);
+      }
+    }
+  }
+} 
+.home {
+  .title {
+    h1 {
+      @include font-size($home-name-font-sizes);
+    }
+    span {
+      @include font-size($home-subtitle-font-sizes);
+    }
+  }
+} 
+.about {
+  .wrap {
+    h5 {
+      @include font-size($about-block-title-font-sizes
+        );
+    }
+  }
+}
+.card {
+  .title, .connection {
+    @include font-size($card-title-font-sizes);
+  }
+  .content {
+    @include font-size($card-content-font-sizes);
+  }
+  .tags {
+    @include font-size($card-tags-font-sizes);
+  }
+}
+
+%title {
+  position: relative;
+  z-index: 4;
+  width: fit-content;
+  margin: 0;
+  margin: 25px auto 25px 40px;
+  // margin-left: 30px;
+  padding: 10px 25px;
+  @include font-size($page-title-font-sizes);
+  &::before {
+    content: '';
+    z-index: -2;
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    top: 20%;
+    left: 5%;
+    background-color: #F8DBBD;
+
+      
+    // transform: scaleX(1);
+    // transform-origin: bottom right;
+    // transition: transform 0.25s ease-out;
+  }
+  &::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 70%;
+    height: 35px;
+    bottom: 8%;
+    right: 2%;
+    // background-color: rgb(249, 189, 189);
+    background-color: rgb(251, 242, 157); 
+    // transform: scaleX(1);
+    // transform-origin: bottom right;
+    // transition: transform 0.25s ease-out;
+  }
+}
+
+@mixin size_XL {
+  @media (max-width: $breakpoint_XL) {
+    @content;
+  }
+}
+@mixin size_L {
+  @media (max-width: $breakpoint_L) {
+    @content;
+  }
+}
+@mixin size_M {
+  @media (max-width: $breakpoint_M) {
+    @content;
+  }
+}
+@mixin size_S {
+  @media (max-width: $breakpoint_S) {
+    @content;
+  }
+}
+@mixin size_XS {
+  @media (max-width: $breakpoint_XS) {
+    @content;
+  }
+}
+@mixin size_XXS {
+  @media (max-width: $breakpoint_XXS) {
+    @content;
+  }
+}
+
+@mixin height_XL {
+  @media (max-height: $height_XL) {
+    @content;
+  }
+}
+@mixin height_L {
+  @media (max-height: $height_L) {
+    @content;
+  }
+}
+@mixin height_M {
+  @media (max-height: $height_M) {
+    @content;
+  }
+}
+@mixin height_S {
+  @media (max-height: $height_S) {
+    @content;
+  }
+}
+@mixin height_XS {
+  @media (max-height: $height_XS) {
+    @content;
+  }
+}
+@mixin height_XXS {
+  @media (max-height: $height_XXS) {
+    @content;
+  }
+}
