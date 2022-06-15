@@ -230,7 +230,7 @@ $card-tags-font-sizes: (
   }
 }
 :deep(.el-card) {
-  .intro-title, .connection {
+  .card-intro {
     @include font-size($card-title-font-sizes);
     font-weight: 450;
   }

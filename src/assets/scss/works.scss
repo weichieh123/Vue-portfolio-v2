@@ -36,17 +36,25 @@
       padding-right: 50px;
       margin-left: 40px;
       :deep(.el-card) {
-        width: 600px;
-        height: 420px;
-        min-height: 420px;
+        max-width: 600px;
+        width: 50vw;
+        height: 33vw;
+        max-height: 420px;
         margin-left: 40px;
         margin-bottom: 30px;
         cursor: pointer;
+        @include size_L {
+          height: 40vw;
+        }
         @include size_M {
+          height: 51vw;
           margin-left: 0;
+          margin-bottom: 40px;
         }
         .pic {
-          height: 340px
+          max-height: 340px;
+          height: 29vw;
+          width: 100%;
         }
         img {
           object-fit: cover;
@@ -60,36 +68,52 @@
           padding: 14px;
           margin-top: -30px;
           border-top: 2px solid #eee;
-          .intro-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .intro-title {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            .intro-title {
-              display: flex;
-              justify-content: flex-start;
-              align-items: center;
-              margin-left: 10px;
-              text-decoration: none;
-              width: fit-content;
-              &:active {
-                color: #283e5a;
-              }
-              @extend %intro-animation;
-              .connection {
-                margin-left: 15px;
-                display: none;
-                transition: 3.8s ease-out;
-              }
+            margin-left: 10px;
+            text-decoration: none;
+            width: fit-content;
+            &:active {
+              color: #283e5a;
             }
-            .intro-icon {
-              margin-right: 10px;
-              .change-color {
-                color: $color_IntroIcon;
-                border-color: $color_IntroIcon;
-              }
+            @extend %intro-animation;
+            .connection {
+              margin-left: 15px;
+              display: none;
+              transition: 3.8s ease-out;
+            }
+          }
+          .intro-icon {
+            margin-right: 10px;
+            .change-color {
+              color: $color_IntroIcon;
+              border-color: $color_IntroIcon;
             }
           }
         }
+        @include size_L {
+          width: 60vw;
+          .pic {
+            height: 33vw;
+          }
+        }
+        @include size_M {
+          width: 80vw;
+          .pic {
+            height: 44vw;
+          }
+        }
+        // @include size_S {
+        //   width: 450px;
+        // }
+        // @include size_XS {
+        //   width: 300px;
+        // }
       }
       @include size_M {
         margin: 0 auto;
@@ -105,7 +129,7 @@
   }
   .notice {
     cursor: pointer;
-    margin: 30px 5% 0 auto;
+    margin: -15px 5% 0 auto;
     display: flex;
     justify-content: space-between;
     width: 110px;
@@ -114,6 +138,9 @@
     line-height: 30px;
     z-index: 9;
     color: $color_Main;
+    @include size_L {
+      margin: -30px 5% 0 auto;
+    }
     @include size_M {
       display: none;
     }

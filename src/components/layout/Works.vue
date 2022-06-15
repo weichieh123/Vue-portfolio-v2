@@ -14,12 +14,10 @@
             />
           </div>
           <div class="card-intro">
-            <div class="intro-top">
-              <a class="intro-title" :href="work.link">{{ work.title }}</a>
-              <div class="intro-icon">
-                <el-button class="change-color" :icon="Platform" circle />
-                <el-button v-if="work.rwd" class="change-color" :icon="Iphone" circle />
-              </div>
+            <a class="intro-title" :href="work.link">{{ work.title }}</a>
+            <div class="intro-icon">
+              <el-button class="change-color" :icon="Platform" circle />
+              <el-button v-if="work.rwd" class="change-color" :icon="Iphone" circle />
             </div>
           </div>
         </el-card>
