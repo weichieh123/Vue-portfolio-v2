@@ -1,10 +1,18 @@
 @keyframes blink {
-	0% {opacity: 0}
-	49%{opacity: 0}
-	50% {opacity: 1}
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-.blink{animation: blink 1s infinite;}
+.blink {
+  animation: blink 1s infinite;
+}
 
 .works {
   position: relative;
@@ -12,7 +20,6 @@
   padding: 40px 0;
   @include size_M {
     padding: 30px 0;
-
   }
   h2 {
     @extend %title;
@@ -23,242 +30,64 @@
     .wrap {
       width: fit-content;
       display: flex;
-      height: calc(100vh - #{$navHeight} - 130px);
+      // height: calc(100vh - #{$navHeight} - 130px);
+      height: fit-content;
       min-height: 420px;
       padding-right: 50px;
       margin-left: 40px;
-      .card {
-        width: 700px;
-        height: 350px;
+      :deep(.el-card) {
+        width: 600px;
+        height: 420px;
+        min-height: 420px;
         margin-left: 40px;
-        background-color: $color_all_card_bg;
-        display: flex;
-        position: relative;
-        transition: all 1s ease;
-        z-index: 10;
-        box-shadow: 5px 5px 10px #888888;
-        &:hover {
-          .content {
-            display: block;
-            // bottom: 0;
-            @include size_M {
-              display: none;
-            }
-          }
-        }
-        .title {
-          position: absolute;
-          width: 100%;
-          top: 0;
-          left: 0;
-          margin: 0;
-          padding: 8px 20px;
-          box-sizing: border-box;
-          z-index: 99;
-          a {
-            margin: 0 auto;
-            width: fit-content;
-            text-decoration: none;
-            position: relative;
-            display: flex;
-            align-items: center;
-            .connection {
-              margin-left: 5px;
-            }
-            &::after {
-              content: '';
-              position: absolute;
-              width: 100%;
-              transform: scaleX(0);
-              height: 2px;
-              bottom: 0;
-              left: 0;
-              background-color: #fff;
-              transform-origin: bottom right;
-              transition: transform 0.25s ease-out;
-            }
-            &:hover::after {
-              transform: scaleX(1);
-              transform-origin: bottom left;
-              @include size_M {
-                text-decoration: none;
-              }
-            }
-          }
-        }
-        .left {
-          flex: 2;
-          // background-color: $color_vue_card_left_bg;
-          .icons {
-            margin-top: 70px;
-            margin-left: 10px;
-            font-size: 20px;
-            // color: $color_vue_card_left_icons;
-            @include size_M {
-              font-size: 17px;
-            }
-            @include size_S {
-              font-size: 15px;
-            }
-            @include size_XS {
-              font-size: 13px;
-            }
-            i {
-              margin-left: 10px;
-              padding: 5px;
-              border: 1px solid;
-              border-radius: 100%;
-            }
-          }
-          .tags {
-            margin: 20px;
-            // color: $color_vue_card_left_tags;
-            font-style: italic;
-            span {
-              display: block;
-              margin-bottom: 5px;
-            }
-          }
-          small {
-            margin: 0 20px 5px;
-            font-size: 12px;
-            // color: $color_vue_card_left_small;
-            font-style: italic;
-            display: none;
-          }
-        }
-        .right {
-          flex: 8;
-          overflow: hidden;
-          vertical-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s ease;
-            // &:hover {
-            //   transform: scale(1.1);
-            //   @include size_M {
-            //     transform: none;
-            //   }
-            // }
-          }
-          .mobile {
-            cursor: pointer;
-            position: absolute;
-            width: 130px;
-            height: 270px;
-            right: 10px;
-            bottom: -15px;
-            img {
-              height: 100%;
-              object-fit: cover;
-              &:hover {
-                transform: scale(1.1);
-                @include size_M {
-                  transform: none;
-                }
-              }
-            }
-          }
-        }
-        .content {
-          display: none;
-          background-color: $color_all_card_content_bg;
-          width: 100%;
-          height: 40px;
-          line-height: 40px;
-          box-sizing: border-box;
-          position: absolute;
-          bottom: 0;
-          padding: 0 10px;
-          transition: 0.5s ease;
-          z-index: 1;
-        }
+        margin-bottom: 30px;
+        cursor: pointer;
         @include size_M {
-          width: 550px;
-          height: 400px;
-          flex-direction: column;
-          .left {
-            order: 2;
-            z-index: 11;
-            .icons {
-              margin-top: 10px;
-            }
-            .tags {
+          margin-left: 0;
+        }
+        .pic {
+          height: 340px
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
+          margin-top: -30px;
+        }
+        .card-intro {
+          padding: 14px;
+          margin-top: -30px;
+          border-top: 2px solid #eee;
+          .intro-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .intro-title {
               display: flex;
-              flex-wrap: wrap;
-              margin: 10px 20px;
-              span {
-                width: fit-content;
-                display: inline-block;
-                margin-bottom: 0;
-                margin-right: 10px;
+              justify-content: flex-start;
+              align-items: center;
+              margin-left: 10px;
+              text-decoration: none;
+              width: fit-content;
+              &:active {
+                color: #283e5a;
+              }
+              @extend %intro-animation;
+              .connection {
+                margin-left: 15px;
+                display: none;
+                transition: 3.8s ease-out;
               }
             }
-          }
-          .right {
-            order: 1;
-            .mobile {
-              // display: none;
-              z-index: 99;
-              width: 110px;
-              height: 250px;
+            .intro-icon {
+              margin-right: 10px;
+              .change-color {
+                color: $color_IntroIcon;
+                border-color: $color_IntroIcon;
+              }
             }
-          }
-          .content {
-            display: block;
-            z-index: 9;
-            // padding: 0 5px;
-            &.isLong {
-              height: 52px;
-              line-height: 26px;
-              padding: 0 15px;
-            }
-          }
-          // &:hover {
-          //   .content {
-          //     margin-bottom: -40px;
-          //     &.isLong {
-          //       margin-bottom: -52px;
-          //     }
-          //   }
-          // }
-        }
-        @include size_S {
-          width: 400px;
-          height: 350px;
-          .right .mobile {
-            width: 107px;
-            height: 220px;
-            margin-bottom: 48px;
-            right: -4px;
-          }
-          .left small {
-            display: block;
-          }
-        }
-        @include size_XS {
-          width: 350px;
-          height: 300px;
-          .right .mobile {
-            width: 90px;
-            height: 180px;
-            margin-bottom: 65px;
-            right: -5px;
-          }
-        }
-        @include size_XXS {
-          width: 300px;
-          height: 280px;
-          .right .mobile {
-            width: 75px;
-            height: 160px;
-            margin-bottom: 60px;
           }
         }
       }
@@ -276,9 +105,7 @@
   }
   .notice {
     cursor: pointer;
-    position: absolute;
-    right: 10%;
-    bottom: 35%;
+    margin: 30px 5% 0 auto;
     display: flex;
     justify-content: space-between;
     width: 110px;
@@ -287,18 +114,6 @@
     line-height: 30px;
     z-index: 9;
     color: $color_Main;
-    @include height_L {
-      bottom: 25%;
-    }
-    @include height_M {
-      bottom: 15%;
-    }
-    @include height_S {
-      bottom: 10%;
-    }
-    @include height_XS {
-      bottom: 5%;
-    }
     @include size_M {
       display: none;
     }
@@ -306,7 +121,8 @@
 }
 .works-layout {
   background-color: $color_layout_bg;
-  background-image: url("~@/assets/waves/wave-layout-top.svg"), url("~@/assets/waves/wave-layout-bottom.svg");
+  background-image: url('~@/assets/waves/wave-layout-top.svg'),
+    url('~@/assets/waves/wave-layout-bottom.svg');
   background-repeat: no-repeat;
   background-position: top, bottom;
   h2 {
@@ -321,7 +137,7 @@
     }
     .left {
       background-color: $color_layout_card_left_bg;
-      .icons  {
+      .icons {
         color: $color_layout_card_left_icons;
         border-color: $color_layout_card_left_icons;
       }
@@ -339,10 +155,10 @@
   h2 {
     color: $color_vue_page_title;
     &::before {
-      background-color: rgb(250, 250, 250);    
+      background-color: rgb(250, 250, 250);
     }
     &::after {
-      background-color: rgb(251, 242, 157);   
+      background-color: rgb(251, 242, 157);
     }
   }
   .card {
@@ -354,7 +170,7 @@
     }
     .left {
       background-color: $color_vue_card_left_bg;
-      .icons  {
+      .icons {
         color: $color_vue_card_left_icons;
         border-color: $color_vue_card_left_icons;
       }
@@ -369,7 +185,7 @@
 }
 .works-react {
   background-color: $color_react_bg;
-  background-image: url("~@/assets/waves/wave-react-top.svg");
+  background-image: url('~@/assets/waves/wave-react-top.svg');
   background-repeat: no-repeat;
   background-position: top;
   margin-bottom: 30px;
@@ -385,7 +201,7 @@
     }
     .left {
       background-color: $color_react_card_left_bg;
-      .icons  {
+      .icons {
         color: $color_react_card_left_icons;
         border-color: $color_react_card_left_icons;
       }
@@ -398,4 +214,3 @@
     }
   }
 }
-

@@ -1,9 +1,29 @@
 <template>
-  <div class="works" v-dragscroll="{ target: '.scroll-section' , active: !isMobile }">
+  <div
+    class="works"
+    v-dragscroll="{ target: '.scroll-section', active: !isMobile }"
+  >
     <h2>{{ title }}</h2>
-    <div class="scroll-section" >
+    <div class="scroll-section">
       <div class="wrap">
-        <div class="card" v-for="(work, i) in works" :key="i">
+        <el-card v-for="(work, i) in works" :key="i" :body-style="{ padding: '0px' }">
+          <div class="pic">
+            <img
+              :src="require('@/assets/Works/' + path + work.img)"
+              class="image"
+            />
+          </div>
+          <div class="card-intro">
+            <div class="intro-top">
+              <a class="intro-title" :href="work.link">{{ work.title }}</a>
+              <div class="intro-icon">
+                <el-button class="change-color" :icon="Platform" circle />
+                <el-button v-if="work.rwd" class="change-color" :icon="Iphone" circle />
+              </div>
+            </div>
+          </div>
+        </el-card>
+        <!-- <div class="card" v-for="(work, i) in works" :key="i">
           <h4 class="title">
             <a :href="work.link">{{ work.title }}<el-icon class="connection"><Connection /></el-icon></a>
           </h4>
@@ -17,7 +37,6 @@
                 ># {{ tag }}</span
               >
             </div>
-            <!-- <small class="content-mobile">{{ work.content }}</small> -->
           </div>
           <div class="right">
             <img
@@ -31,21 +50,24 @@
               />
             </div>
           </div>
-          <!-- <div class="content" :class="{ isLong: work.isLong }">
-            <span>{{ work.content }}</span>
-          </div> -->
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="notice">
       <small>scroll</small>
-      <div class="blink"><el-icon><Right /></el-icon></div>
+      <div class="blink">
+        <el-icon><Right /></el-icon>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { computed, toRefs } from 'vue';
+import {
+  Platform,
+  Iphone,
+} from '@element-plus/icons-vue';
 
 // eslint-disable-next-line no-undef
 const props = defineProps({
