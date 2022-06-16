@@ -1,6 +1,6 @@
 const worksReact = [
   {
-    title: 'Lunar Phase Website',
+    title: 'Lunar Phase',
     img: 'React-LunarPhase-desktop.png',
     mobileImg: '',
     link: 'https://github.com/weichieh123/Lunar_Phase_React',
@@ -20,7 +20,7 @@ const worksReact = [
     isLong: false,
   },
   {
-    title: 'E-Commerce Website',
+    title: 'E-Commerce',
     img: 'React-ECommerce-desktop.jpg',
     mobileImg: 'React-ECommerce-mobile.png',
     link: 'https://wei-react-ecommerce.netlify.app/',

@@ -1,6 +1,6 @@
 const worksVue = [
   {
-    title: 'Bus Route App',
+    title: 'Bus App',
     img: 'Vue-BusApp-desktop.png',
     mobileImg: 'Vue-BusApp-mobile.png',
     link: 'https://weichieh123.github.io/Open-API/#/bus-line',
@@ -10,7 +10,7 @@ const worksVue = [
     isLong: false,
   },
   {
-    title: 'FransHals Museum',
+    title: 'F.H. Museum',
     img: 'Vue-FransHals-desktop.png',
     mobileImg: 'Vue-FransHals-mobile.png',
     link: 'https://weichieh123.github.io/Vue-FransHalsMuseum/',
@@ -20,7 +20,7 @@ const worksVue = [
     isLong: true,
   },
   {
-    title: 'Covid19 Test App',
+    title: 'Covid19 App',
     img: 'Vue-Covid19TestApp-desktop.png',
     mobileImg: 'Vue-Covid19TestApp-mobile.png',
     link: 'https://weichieh123.github.io/covid19-test-app/',
