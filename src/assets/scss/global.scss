@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 // * {
 //   outline: 1px solid red;
 // }
 $color_Main: #283e5a;
 $color_IntroIcon: #7389a7; //desktop,mobile icon color
+$color_Click: #9cd5f8;
+$color_CardTitleAnimation: #54b3d6;
 $color_Blue: #4f85a5;
 $color_DarkBlue: #3a657e;
 $color_LightBlue: #7092a7;
@@ -284,8 +287,8 @@ $card-tags-font-sizes: (
 %intro-animation {
   background-image: linear-gradient(
     to right,
-    #54b3d6,
-    #54b3d6 50%,
+    $color_CardTitleAnimation,
+    $color_CardTitleAnimation 50%,
     #283e5a 50%
   );
   background-size: 200% 100%;
@@ -297,7 +300,7 @@ $card-tags-font-sizes: (
   transition: all 0.3s ease-in-out;
   &::before {
     content: '';
-    background: #54b3d6;
+    background: $color_CardTitleAnimation;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -313,7 +316,7 @@ $card-tags-font-sizes: (
     }
     .connection {
       display: block;
-      color: #54b3d6;
+      color: $color_CardTitleAnimation;
     }
   }
 }

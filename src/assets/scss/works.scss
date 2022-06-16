@@ -14,6 +14,37 @@
   animation: blink 1s infinite;
 }
 
+@keyframes wave {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
 .works {
   position: relative;
   min-height: 500px;
@@ -58,6 +89,40 @@
           max-height: 340px;
           height: 29vw;
           width: 100%;
+          position: relative;
+          transition: all 1.4s ease;
+          &:hover {
+            .hover-hint {
+              display: block;
+            }
+          }
+          .hover-hint {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: calc(100% - 30px);
+            background-color: #4b464294;
+            span {
+              left: 50%;
+              top: 50%; 
+              transform: translate(-50%, -50%);
+              font-family: "Poppins", sans-serif;
+              position: absolute;
+              font-size: 60px;
+              font-weight: 700;
+              color: #fff;
+              &:nth-child(1) {
+                color: transparent;
+                -webkit-text-stroke: 2px $color_Click;
+              }
+              &:nth-child(2) {
+                color: $color_Click;
+                animation: wave 4s ease-in-out infinite;
+              }
+            }
+          }
         }
         img {
           object-fit: cover;

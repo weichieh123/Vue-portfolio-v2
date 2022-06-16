@@ -9,9 +9,15 @@
         <el-card v-for="(work, i) in works" :key="i" :body-style="{ padding: '0px' }">
           <div class="pic">
             <img
+            v-if="!flipCard"
               :src="require('@/assets/Works/' + path + work.img)"
               class="image"
             />
+            <div class="hover-hint">
+              <span>Click me!</span>
+              <span>Click me!</span>
+            </div>
+            <CardInfo v-if="flipCard" />
           </div>
           <div class="card-intro">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>
@@ -61,12 +67,14 @@
 </template>
 
 <script setup>
-import { computed, toRefs } from 'vue';
+import { computed, toRefs, ref } from 'vue';
 import {
   Platform,
   Iphone,
 } from '@element-plus/icons-vue';
+import CardInfo from '@/components/layout/CardInfo.vue';
 
+const flipCard = ref(false);
 // eslint-disable-next-line no-undef
 const props = defineProps({
   title: {
