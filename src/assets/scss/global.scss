@@ -3,6 +3,7 @@
 // * {
 //   outline: 1px solid red;
 // }
+
 $color_Main: #283e5a;
 $color_IntroIcon: #7389a7; //desktop,mobile icon color
 $color_Click: #9cd5f8;
@@ -39,6 +40,12 @@ $color_about_content:$color_Main;
 /* works 共用顏色 */
 $color_all_card_bg: $color_White; // card背景色(看不見，可不調)
 $color_all_card_content_bg: rgba(255, 255, 255, 0.686); // card下方說明背景色
+
+/* works card */
+$card_image_offset: 30px;
+$color_card_info_bg: rgb(89, 122, 141);
+$color_card_info_text: #eee;
+
 /* works-layout */
 $color_layout_bg: #fff;
 $color_layout_page_title: #3a5272;

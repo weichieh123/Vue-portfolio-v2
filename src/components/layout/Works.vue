@@ -7,17 +7,19 @@
     <div class="scroll-section">
       <div class="wrap">
         <el-card v-for="(work, i) in works" :key="i" :body-style="{ padding: '0px' }">
-          <div class="pic" @click="emit('toggle', work)">
-            <img
-            v-if="!work.isFlip"
-              :src="require('@/assets/Works/' + path + work.img)"
-              class="image"
-            />
-            <div class="hover-hint">
-              <span>Click me!</span>
-              <span>Click me!</span>
+          <div class="card-top" >
+            <div class="card" @click="emit('toggle', work)" :class="{ isFlipped: work.isFlip}">
+              <img
+                :src="require('@/assets/Works/' + path + work.img)"
+                class="image card__face card__face-front"
+              />
+              <div class="hover-hint">
+                <span>Click me!</span>
+                <span>Click me!</span>
+              </div>
+              <CardInfo class="card__face card__face-back"  />
+
             </div>
-            <CardInfo v-if="work.isFlip" />
           </div>
           <div class="card-intro">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>

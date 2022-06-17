@@ -1,5 +1,5 @@
 <template>
-  <div>123</div>
+  <div class="card-info">123</div>
 </template>
 
 <style lang="scss" scoped>
