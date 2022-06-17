@@ -7,6 +7,7 @@ const worksLayout = [
     tags: ['Html', 'CSS', 'Bootstrap', 'RWD'],
     rwd: true,
     content: '切版練習，以Html架構切出Kieka RWD網頁。',
+    isFlip: false,
   },
   {
     title: 'Verse Website',
@@ -16,6 +17,7 @@ const worksLayout = [
     tags: ['Html', 'CSS', 'Bootstrap', 'RWD'],
     rwd: true,
     content: '切版練習，以Html架構切出Verse RWD網頁。',
+    isFlip: false,
   },
 ];
 

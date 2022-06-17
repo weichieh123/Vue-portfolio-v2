@@ -7,9 +7,9 @@
     <div class="scroll-section">
       <div class="wrap">
         <el-card v-for="(work, i) in works" :key="i" :body-style="{ padding: '0px' }">
-          <div class="pic">
+          <div class="pic" @click="emit('toggle', work)">
             <img
-            v-if="!flipCard"
+            v-if="!work.isFlip"
               :src="require('@/assets/Works/' + path + work.img)"
               class="image"
             />
@@ -17,7 +17,7 @@
               <span>Click me!</span>
               <span>Click me!</span>
             </div>
-            <CardInfo v-if="flipCard" />
+            <CardInfo v-if="work.isFlip" />
           </div>
           <div class="card-intro">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>
@@ -67,14 +67,13 @@
 </template>
 
 <script setup>
-import { computed, toRefs, ref } from 'vue';
+import { computed, toRefs } from 'vue';
 import {
   Platform,
   Iphone,
 } from '@element-plus/icons-vue';
 import CardInfo from '@/components/layout/CardInfo.vue';
 
-const flipCard = ref(false);
 // eslint-disable-next-line no-undef
 const props = defineProps({
   title: {
@@ -95,6 +94,9 @@ const isMobile = computed(() => {
   // console.log('mobile??', ifIsMobile.matches);
   return ifIsMobile.matches;
 });
+
+// eslint-disable-next-line no-undef
+const emit = defineEmits(['toggle']);
 
 // const calcMobile = () => {
 //   const ifIsMobile = window.matchMedia('only screen and (max-width: 768px)');

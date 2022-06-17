@@ -8,6 +8,7 @@ const worksReact = [
     rwd: false,
     content: '以React+Node實作電商網站(負責購物車、歷史訂單、收藏頁與團隊整合)。',
     isLong: true,
+    isFlip: false,
   },
   {
     title: 'Food Order App',
@@ -18,6 +19,7 @@ const worksReact = [
     rwd: false,
     content: '使用React架構，實現新增、修改、刪除、查詢之功能。',
     isLong: false,
+    isFlip: false,
   },
   {
     title: 'E-Commerce',
@@ -28,6 +30,7 @@ const worksReact = [
     rwd: false,
     content: '使用React架構，搭配Material UI、Commerce.js與Stripe，實現電商網站。',
     isLong: true,
+    isFlip: false,
   },
   {
     title: 'Todo App',
@@ -39,6 +42,7 @@ const worksReact = [
     content:
       '使用React架構，搭配Material Design UI，實現Todo App。',
     isLong: true,
+    isFlip: false,
   },
 ];
 

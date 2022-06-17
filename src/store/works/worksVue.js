@@ -8,6 +8,7 @@ const worksVue = [
     rwd: true,
     content: '使用Vue3架構，串接Open API，實現公車路線查詢之功能。',
     isLong: false,
+    isFlip: false,
   },
   {
     title: 'F.H. Museum',
@@ -18,6 +19,7 @@ const worksVue = [
     rwd: true,
     content: '使用Vue3架構，以FransHals Museum網站為參考做切版練習。',
     isLong: true,
+    isFlip: false,
   },
   {
     title: 'Covid19 App',
@@ -28,6 +30,7 @@ const worksVue = [
     rwd: true,
     content: '使用Vue3架構，串接下載衛服部之開放式資料，實現快篩試劑庫存查詢之功能。',
     isLong: true,
+    isFlip: false,
   },
   {
     title: 'Todo App',
@@ -37,6 +40,7 @@ const worksVue = [
     tags: ['Vue2'],
     rwd: false,
     content: '使用Vue2架構，實現新增、修改、刪除、查詢之功能。',
+    isFlip: false,
   },
 ];
 
