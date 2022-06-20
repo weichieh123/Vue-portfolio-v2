@@ -21,5 +21,6 @@ module.exports = {
     // "prettier/prettier": ["error", { endOfLine: "auto" }],
     // 'prettier/prettier': ['error', { singleQuote: true }],
     'linebreak-style': [0, 'error', 'windows'],
+    'no-undef': 'off',
   },
 };

@@ -1,6 +1,13 @@
 .card-info {
-    padding-top: $card_image_offset;
+    padding: $card_image_offset;
     box-sizing: border-box;
     background-color: $color_card_info_bg;
     color: $color_card_info_text;
+    .close-btn {
+        position: absolute;
+        font-size: 26px;
+        right: 15px;
+        top: 45px;
+        padding: 5px;
+    }
 }

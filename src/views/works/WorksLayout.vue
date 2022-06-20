@@ -1,7 +1,13 @@
 <template>
-    <Work
-        id="works-layout" class="works-layout" :title="'Layout'" :works="works" :path="'Layout/'" @toggle="toggleIsFlip"
-     />
+  <Work
+    id="works-layout"
+    class="works-layout"
+    :title="'Layout'"
+    :works="works"
+    :path="'Layout/'"
+    @flip="flipCard"
+    @close="closeCard"
+  />
 </template>
 
 <script setup>
@@ -11,8 +17,12 @@ import Work from '@/components/layout/Works.vue';
 
 const works = reactive(worksLayout);
 
-const toggleIsFlip = (work) => {
+const flipCard = (work) => {
   // eslint-disable-next-line no-param-reassign
-  work.isFlip = !work.isFlip;
+  work.isFlip = true;
+};
+const closeCard = (work) => {
+  // eslint-disable-next-line no-param-reassign
+  work.isFlip = false;
 };
 </script>

@@ -1,6 +1,7 @@
 const worksReact = [
   {
     title: 'Lunar Phase',
+    accomplishment: ['Built with React & Node', 'Store data in Mysql', 'Shopping Cart'],
     img: 'React-LunarPhase-desktop.png',
     mobileImg: '',
     link: 'https://github.com/weichieh123/Lunar_Phase_React',
@@ -12,17 +13,19 @@ const worksReact = [
   },
   {
     title: 'Food Order App',
+    accomplishment: ['Built with React', 'Store data in Firebase', 'Management with useContext, useReducer'],
     img: 'React-FoodOrderApp-desktop.jpg',
     mobileImg: '',
     link: 'https://weichieh123.github.io/FoodOrderApp/',
     tags: ['React', 'useContext', 'useReducer', 'forwardRef', 'Firebase'],
     rwd: false,
-    content: '使用React架構，實現新增、修改、刪除、查詢之功能。',
+    content: '使用React架構，實作電商網站點餐、結帳功能。',
     isLong: false,
     isFlip: false,
   },
   {
     title: 'E-Commerce',
+    accomplishment: ['Built with React', 'Using Material UI', 'Using Commerce JS'],
     img: 'React-ECommerce-desktop.jpg',
     mobileImg: 'React-ECommerce-mobile.png',
     link: 'https://wei-react-ecommerce.netlify.app/',
@@ -34,6 +37,7 @@ const worksReact = [
   },
   {
     title: 'Todo App',
+    accomplishment: ['Built with React', 'Using Material UI', 'CRUD'],
     img: 'React-TodoApp-desktop.jpg',
     mobileImg: '',
     link: 'https://weichieh123.github.io/React-TodoApp-MUI/',

@@ -5,7 +5,7 @@
     :title="'React'"
     :works="works"
     :path="'React/'"
-    @toggle="toggleIsFlip"
+    @flip="flipCard" @close="closeCard"
   />
 </template>
 
@@ -16,8 +16,12 @@ import Work from '@/components/layout/Works.vue';
 
 const works = reactive(worksReact);
 
-const toggleIsFlip = (work) => {
+const flipCard = (work) => {
   // eslint-disable-next-line no-param-reassign
-  work.isFlip = !work.isFlip;
+  work.isFlip = true;
+};
+const closeCard = (work) => {
+  // eslint-disable-next-line no-param-reassign
+  work.isFlip = false;
 };
 </script>

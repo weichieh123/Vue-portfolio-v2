@@ -6,26 +6,41 @@
     <h2>{{ title }}</h2>
     <div class="scroll-section">
       <div class="wrap">
-        <el-card v-for="(work, i) in works" :key="i" :body-style="{ padding: '0px' }">
-          <div class="card-top" >
-            <div class="card" @click="emit('toggle', work)" :class="{ isFlipped: work.isFlip}">
+        <el-card
+          v-for="(work, i) in works"
+          :key="i"
+          :body-style="{ padding: '0px' }"
+        >
+          <div class="card-top">
+            <div
+              class="card"
+              :class="{ isFlipped: work.isFlip }"
+            >
               <img
                 :src="require('@/assets/Works/' + path + work.img)"
                 class="image card__face card__face-front"
               />
-              <div class="hover-hint">
+              <div class="hover-hint" @click="emit('flip', work)">
                 <span>Click me!</span>
                 <span>Click me!</span>
               </div>
-              <CardInfo class="card__face card__face-back"  />
-
+              <CardInfo
+                class="card__face card__face-back"
+                :work="work"
+                @close="closeCard"
+              />
             </div>
           </div>
           <div class="card-intro">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>
             <div class="intro-icon">
               <el-button class="change-color" :icon="Platform" circle />
-              <el-button v-if="work.rwd" class="change-color" :icon="Iphone" circle />
+              <el-button
+                v-if="work.rwd"
+                class="change-color"
+                :icon="Iphone"
+                circle
+              />
             </div>
           </div>
         </el-card>
@@ -70,13 +85,9 @@
 
 <script setup>
 import { computed, toRefs } from 'vue';
-import {
-  Platform,
-  Iphone,
-} from '@element-plus/icons-vue';
+import { Platform, Iphone } from '@element-plus/icons-vue';
 import CardInfo from '@/components/layout/CardInfo.vue';
 
-// eslint-disable-next-line no-undef
 const props = defineProps({
   title: {
     type: String,
@@ -88,7 +99,6 @@ const props = defineProps({
     type: String,
   },
 });
-
 const { title, works, path } = toRefs(props);
 
 const isMobile = computed(() => {
@@ -98,7 +108,11 @@ const isMobile = computed(() => {
 });
 
 // eslint-disable-next-line no-undef
-const emit = defineEmits(['toggle']);
+const emit = defineEmits(['flip', 'close']);
+
+const closeCard = (work) => {
+  emit('close', work);
+};
 
 // const calcMobile = () => {
 //   const ifIsMobile = window.matchMedia('only screen and (max-width: 768px)');
