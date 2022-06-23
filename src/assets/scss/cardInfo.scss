@@ -10,4 +10,18 @@
         top: 45px;
         padding: 5px;
     }
+    .links {
+        position: absolute;
+        width: fit-content;
+        display: flex;
+        right: 0;
+        bottom: 0;
+        padding: 15px 5px;
+        .links-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+    }
 }

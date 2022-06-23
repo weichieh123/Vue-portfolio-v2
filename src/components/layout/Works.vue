@@ -18,26 +18,26 @@
             >
               <img
                 :src="require('@/assets/Works/' + path + work.img)"
-                class="image card__face card__face-front"
+                class="img-fullscreen card__face card__face-front mt-offset"
               />
               <div class="hover-hint" @click="emit('flip', work)">
                 <span>Click me!</span>
                 <span>Click me!</span>
               </div>
               <CardInfo
-                class="card__face card__face-back"
+                class="card__face card__face-back mt-offset"
                 :work="work"
                 @close="closeCard"
               />
             </div>
           </div>
-          <div class="card-intro">
+          <div class="card-intro mt-offset">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>
             <div class="intro-icon">
-              <el-button class="change-color" :icon="Platform" circle />
+              <el-button class="rwd-icon-color" :icon="Platform" circle />
               <el-button
                 v-if="work.rwd"
-                class="change-color"
+                class="rwd-icon-color"
                 :icon="Iphone"
                 circle
               />
