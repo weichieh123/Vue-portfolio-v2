@@ -172,6 +172,14 @@
               color: #283e5a;
             }
             @extend %intro-animation;
+            &:hover {
+              @include size_S {
+                background-position: -100%;
+                &::before {
+                  width: 0;
+                }
+              }
+            }
             .connection {
               margin-left: 15px;
               display: none;
