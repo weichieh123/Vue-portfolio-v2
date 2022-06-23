@@ -1,10 +1,10 @@
 <template>
   <div class="card-info">
-    <h4>Accomplishment</h4>
-    <ul v-for="(item, index) in work.accomplishment" :key="index">
+    <h4 class="info-title">Accomplishment</h4>
+    <ul class="info-list" v-for="(item, index) in work.accomplishment" :key="index">
       <li>{{item}}</li>
     </ul>
-    <p>{{work.content}}</p>
+    <p class="info-content">{{work.content}}</p>
     <el-icon @click="emit('close', work)" class="close-btn"><Close /></el-icon>
     <div class="links">
       <a :href="work.website"><el-button class="links-icon intro-links-color" :icon="Promotion" circle /></a>

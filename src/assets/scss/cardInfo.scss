@@ -3,12 +3,26 @@
     box-sizing: border-box;
     background-color: $color_card_info_bg;
     color: $color_card_info_text;
+    @include size_S {
+        padding: 30px 40px 0 20px;
+        .info-title, .info-list {
+            display: none;
+        }
+    }
+    .info-content {
+        text-align: justify;
+    }
     .close-btn {
         position: absolute;
         font-size: 26px;
         right: 15px;
         top: 45px;
         padding: 5px;
+        @include size_M {
+            right: 8px;
+            top: 38px;
+            font-size: 22px;
+        }
     }
     .links {
         position: absolute;
@@ -17,11 +31,20 @@
         right: 0;
         bottom: 0;
         padding: 15px 5px;
+        @include size_XS {
+            display: none;
+        }
         .links-icon {
             width: 40px;
             height: 40px;
             font-size: 25px;
             margin-right: 10px;
+            @include size_S {
+                width: 30px;
+                height: 30px;
+                font-size: 25px;
+                margin-right: 10px;
+            }
         }
     }
 }

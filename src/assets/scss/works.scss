@@ -118,6 +118,9 @@
           &:hover {
             .hover-hint {
               display: block;
+              @include size_M {
+                opacity: 0;
+              }
             }
           }
           .hover-hint {

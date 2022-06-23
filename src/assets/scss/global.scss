@@ -192,6 +192,14 @@ $card-hint-font-sizes: (
   $breakpoint_L: 52px,
   $breakpoint_XL: 56px,
 );
+$card-info-content-font-sizes: (
+  null: 14px,
+  $breakpoint_XS: 14px,
+  $breakpoint_S: 14px,
+  $breakpoint_M: 14px,
+  $breakpoint_L: 15px,
+  $breakpoint_XL: 16px,
+);
 $card-title-font-sizes: (
   null: 18px,
   $breakpoint_XS: 18px,
@@ -269,6 +277,13 @@ $card-tags-font-sizes: (
 :deep(.el-card) {
   .card-top .hover-hint span {
     @include font-size($card-hint-font-sizes);
+  }
+  .card-top {
+    .card-info {
+      .info-content {
+        @include font-size($card-info-content-font-sizes);
+      }
+    }
   }
   .card-intro {
     @include font-size($card-title-font-sizes);
