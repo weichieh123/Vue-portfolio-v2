@@ -224,7 +224,7 @@ $card-tags-font-sizes: (
   $breakpoint_L: 14px,
   $breakpoint_XL: 14px,
 );
-// 共用class
+// 共用class ================
 .mt-offset {
   margin-top: -$card_image_offset;
 }
@@ -243,6 +243,7 @@ $card-tags-font-sizes: (
   color: $color_card_info_bg;
   border-color: $color_card_info_bg;
 }
+// 共用class end ================
 .header{
   .logo {
     @include font-size($header-logo-font-sizes);

@@ -34,13 +34,20 @@
           <div class="card-intro mt-offset">
             <a class="intro-title" :href="work.link">{{ work.title }}</a>
             <div class="intro-icon">
-              <el-button class="rwd-icon-color" :icon="Platform" circle />
+              <el-button class="rwd-icon-color desktop-show" :icon="Platform" circle />
               <el-button
                 v-if="work.rwd"
-                class="rwd-icon-color"
+                class="rwd-icon-color desktop-show"
                 :icon="Iphone"
                 circle
               />
+              <a :href="work.link">
+                <el-button
+                  class="rwd-icon-color mobile-show"
+                  :icon="Promotion"
+                  circle
+                />
+              </a>
             </div>
           </div>
         </el-card>
@@ -85,7 +92,7 @@
 
 <script setup>
 import { computed, toRefs } from 'vue';
-import { Platform, Iphone } from '@element-plus/icons-vue';
+import { Platform, Iphone, Promotion } from '@element-plus/icons-vue';
 import CardInfo from '@/components/layout/CardInfo.vue';
 
 const props = defineProps({

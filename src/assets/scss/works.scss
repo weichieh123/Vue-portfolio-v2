@@ -200,6 +200,17 @@
             .el-button+.el-button {
               margin-left: 5px;
             }
+            .desktop-show {
+              @include size_XS {
+                display: none;
+              }
+            }
+            .mobile-show {
+              display: none;
+              @include size_XS {
+                display: block;
+              }
+            }
           }
         }
         @include size_L {
